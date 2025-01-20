@@ -1,0 +1,375 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+
+:root {
+    --main-color: #C68859;
+    --dark-main: #9d6536;
+    --black: #13131a;
+    --bg: #d7b784;
+}
+
+/* Overall design */
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.2s linear;
+    text-decoration: none;
+}
+
+html {
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image:url(JEPOY.jpeg); 
+    color: white; /* Dark gray text */
+    padding-bottom: 60px;
+}
+
+/* Header Section */
+header {
+    background-image:url(SWOOSH.png); 
+    color: #333333; /* Dark text */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img {
+    height: 75px;
+    margin-left: 15px;
+}
+
+header .navbar {
+    display: flex;
+    gap: 15px;
+}
+
+header .navbar a.active {
+    color: #fff;
+    background: var(--main-color);
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+header .navbar a:hover, 
+header .navbar a.active {
+    color: floralwhite;
+    border-bottom: 2px solid floralwhite;
+}
+
+header .check-btn {
+    font-size: 30px;
+    color: black;
+    display: none;
+    cursor: pointer;
+}
+
+header .check-btn:hover {
+    color: floralwhite;
+}
+
+#check {
+    display: none;
+}
+
+header .search-form {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+header .search-form input {
+    height: 50px;
+    width: 80%;
+    font-size: 1.6rem;
+    color: var(--black);
+    background: whitesmoke;
+    border-radius: 25px;
+    border: 1px solid var(--main-color);
+    padding: 0.5rem 1rem;
+}
+
+header .search-form input:focus {
+    outline: none;
+}
+
+/* CONTENT START */
+.content {
+    width: 95%;
+    margin-left: 3%;
+    margin-top: 150px;
+}
+
+/* FIRST PART */
+.about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.about-image {
+    flex: 1;
+    overflow: hidden;
+}
+
+.about-image img {
+    max-width: 101%;
+    height: auto;
+    display: block;
+    transition: 0.5s ease;
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-content h2 {
+    font-size: 34px;
+    margin-bottom: 15px;
+    margin-left: 50px;
+    color: #000;
+    margin-right: 2px;
+}
+
+.about-content p {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #000;
+    margin-left: 50px;
+    margin-right: 20px;
+    text-align: justify;
+}
+
+/* Team Section (Owner Card) */
+.team .heading {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.team .team-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+.team .team-cards .card {
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 3px 3px 10px rgba(179, 179, 179, 0.2);
+    border-radius: 20px;
+    padding: 1rem;
+    border: var(--dark-main) solid 3px;
+    background-color: white;
+    text-align: center;
+}
+
+.team .team-cards .card-img img {
+    width: 80%;
+    border-radius: 10px;
+    margin-top: 20px;
+    object-fit: cover;
+}
+
+.team .team-cards .card a {
+    text-decoration: none;
+}
+
+.team .team-cards .card .team-info h2 {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: #333;
+}
+
+.team .team-cards .card .team-info p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.team .team-cards .card .button {
+    background-color: var(--main-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    margin-top: 15px;
+}
+
+.team .team-cards .card:hover {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Media Queries for Responsive Layout */
+@media (max-width: 768px) {
+    .menu .container {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Smaller columns on smaller screens */
+    }
+
+    .menu .container .menu-box {
+        max-width: 100%;
+    }
+
+    .menu .container .menu-box img {
+        width: 100%;
+        margin-top: 15px; /* Reduce margin on smaller screens */
+    }
+
+    .team .team-cards {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 1020px) {
+    header .navbar {
+        display: none;
+    }
+
+    header .check-btn {
+        display: block;
+    }
+
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--dark-main);
+        top: 90px;
+        left: -100%;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+    }
+
+    nav ul li a {
+        font-size: 45px;
+        color: floralwhite;
+        font-weight: bold;
+        line-height: 120px;
+    }
+
+    .header .search-form {
+        margin-left: 240px;
+    }
+
+    header .search-form input {
+        height: 50px;
+        width: 340px;
+        font-size: 1.6rem;
+        color: var(--black);
+        text-transform: none;
+        background: whitesmoke;
+        border-radius: 50px;
+        border-color: var(--main-color);
+        margin-right: 17px;
+        padding: 10px;
+    }
+
+    .check-btn:checked + .navbar {
+        display: block;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background-color: var(--dark-main);
+        width: 100%;
+        padding: 1rem 0;
+        text-align: center;
+        transition: all 3s;
+    }
+
+    .navbar a {
+        display: block;
+        margin: 0 auto;
+        font-size: 2rem;
+        color: floralwhite;
+    }
+    /* Footer */
+.footer {
+    background: #C68859;
+    color: #fff;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-between; /* Align sections horizontally with space between */
+    text-align: left;
+    flex-wrap: wrap; /* Ensure responsiveness for smaller screens */
+}
+
+.footer-box {
+    flex: 1; /* Make each section occupy equal space */
+    margin: 0 20px; /* Add some spacing between sections */
+    min-width: 200px; /* Ensure sections have a minimum width */
+}
+
+.footer h3 {
+    font-size: 18px;
+    color: #f0a500;
+    margin-bottom: 10px;
+}
+
+.footer p, .footer a {
+    font-size: 14px;
+    color: #ddd;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #fff;
+}
+
+.footer form {
+    display: flex; /* Align input and button horizontally */
+    align-items: center;
+    margin-top: 10px;
+}
+
+.footer input[type="email"] {
+    padding: 5px;
+    flex: 1;
+    border: none;
+    border-radius: 3px 0 0 3px;
+    outline: none;
+}
+
+.footer button {
+    padding: 5px 10px;
+    background: #f0a500;
+    color: #fff;
+    border: none;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.footer button:hover {
+    background: #555;
+}
+
+.footer-box a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-box a i {
+    font-size: 1.2rem;
+    color: #f0a500;
+}
+
+.footer-box a:hover i {
+    color: #fff;
+}
+}
